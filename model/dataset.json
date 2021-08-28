@@ -1,0 +1,41 @@
+{
+    "intents": 
+        [
+        {"tag": "bienvenida",
+        "patterns": ["Hola", "¿Cómo estás?", "¿Qué tal?"],
+        "responses": ["Hola!", "Hola, ¿Cómo estás?"]
+        },
+        {"tag": "nombre",
+        "patterns": ["¿Cúal es tu nombre?", "¿Quién sos?"],
+        "responses": ["Mi nombre es MarvelBOT", "Yo soy MarvelBOT"]
+        },
+    {"tag": "contacto",
+        "patterns": ["contacto", "número de contacto", "número de teléfono", "número de whatsapp", "whatsapp"],
+        "responses": ["Podes contactarnos al siguiente número +54-9-11-2154-4777", "Contactonos al whatsapp número +54-9-11-2154-4777"]
+        },
+    {"tag": "envios",
+        "patterns": ["¿Realizan envios?", "¿Cómo me llega el paquete?"],
+        "responses": ["Los envios se realizan por correo, lo enviaremos a la dirección que registraste en la página"]
+        },
+    {"tag": "precios",
+        "patterns": ["precio", "Me podrás pasar los precios", "¿Cuánto vale?", "¿Cuánto sale?"],
+        "responses": ["En el catálogo podrás encontrar los precios de todos nuestros productos en stock"]
+        },
+    {"tag": "pagos",
+        "patterns": ["medios de pago", "tarjeta de crédito", "tarjetas", "cuotas"],
+        "responses": ["Contactanos al whatsapp número +54-9-11-2154-4777 para conocer los beneficios y formas de pago vigentes"]
+        },
+    {"tag": "stock",
+        "patterns": ["Esto está disponible", "¿Tenes stock?", "¿Hay stock?"],
+        "responses": ["Los productos publicados están en stock"]
+        },
+    {"tag": "agradecimientos",
+        "patterns": [ "Muchas gracias", "Gracias"],
+        "responses": ["Por nada!, cualquier otra consulta podes escribirnos"]
+        },
+        {"tag": "despedida",
+        "patterns": [ "Chau", "Hasta luego!"],
+        "responses": ["Hasta luego!", "Hablamos luego!"]
+        }
+    ]
+}

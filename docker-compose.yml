@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  inove_chatbot:
+    build: .
+    # Imágen a utilizar:
+    image: inove_chatbot
+    ports:
+      # Enlazamos el puerto en el que trabaja el BOT
+      - "8051:5000"
+    volumes:
+      - type: bind
+        source: ./model
+        target: /opt/bot/model
+      
