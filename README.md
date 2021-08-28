@@ -1,4 +1,4 @@
-![logotipo](images/inove.jpg)
+![logotipo](imagenes/inove.jpg)
 # Python ChatBot
 ### BOT de chats para aplicaciones web (Django / Flask)
 
