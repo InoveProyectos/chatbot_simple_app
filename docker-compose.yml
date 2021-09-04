@@ -1,12 +1,24 @@
 version: '3.3'
+
+networks:
+  isolation-network:
+    name: isolation-network
+    driver: bridge
+
 services:
-  inove_chatbot:
+  chatbot:
     build: .
     # Imágen a utilizar:
     image: inove_chatbot
+    container_name: chatbot
+    networks: 
+      - isolation-network
+    hostname: chatbot_inove
     ports:
       # Enlazamos el puerto en el que trabaja el BOT
       - "8051:5000"
+    expose: 
+      - "5000"
     volumes:
       - type: bind
         source: ./model
