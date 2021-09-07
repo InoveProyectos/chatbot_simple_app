@@ -51,3 +51,4 @@ predictions: {
 # Licencia 📄 :balance_scale:
 Este proyecto está bajo la Licencia de Inove (coding school) para libre descarga y uso. Este proyecto tiene un propósito educativo y de muestra, por ello, no nos responsabilizaremos por su uso indebido. Así mismo, no existe garantía en su implementación debido a que se trata de una demostración de uso gratuito con propósitos educativos. 
 ### :copyright: Inove (coding school) 2021.
+
