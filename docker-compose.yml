@@ -7,11 +7,11 @@ networks:
     driver: bridge
 
 services:
-  chatbot:
+  chatbot_inove:
     build: .
     # Imágen a utilizar:
     image: inove_chatbot
-    container_name: chatbot
+    container_name: chatbot_inove
     # Utilizamos la red personalizada:
     networks: 
       - isolation-network
