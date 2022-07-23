@@ -15,7 +15,7 @@ Para ejecutar la aplicación se debe contar con docker instalado para lanzar ten
 Descargue el repositorio en su pc, luego lanzar el servicio de Docker con el siguiente comando:
 ```
 docker build -t inove_chatbot .
-docker run -d -p 8051:5000 -v $(pwd)/model:/opt/bot/model inove_chatbot
+docker run -d -p 8501:8501 -v $(pwd)/model:/opt/bot/model inove_chatbot
 ```
 Or desde el docker-compose
 ```
@@ -23,25 +23,7 @@ docker-compose build
 docker-compose up
 ```
 
-Una vez levantado el container puede ensayar la API con el siguiente ejemplo:
-```
-import requests
-import json
-
-data = {"instances": "Muchas gracias!"}
-json_response = requests.post('http://127.0.0.1:8051/predict', data=data)
-result = json.loads(json_response.text)['predictions']
-print(result)
-```
-
-La predicción del bot está compuesta de los siguientes campos:
-```
-predictions: {
-    label: ..., # tipo de respuesta (tag)
-    score: ..., # Valor 0 a 1 que indica la precisión de esa respuesta
-    messsage: ... # Mensaje del bot como respuesta (texto)
-}
-```
+Una vez levantado el container puede ensayar la API con el script "test.py"
 
 # Autores ✒️
 ### Miembros de Inove (coding school)

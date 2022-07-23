@@ -19,9 +19,9 @@ services:
     hostname: chatbot_inove
     ports:
       # Enlazamos el puerto en el que trabaja el BOT
-      - "8051:5000"
+      - "8501:8501"
     expose: 
-      - "5000"
+      - "8501"
     volumes:
       - type: bind
         source: ./model

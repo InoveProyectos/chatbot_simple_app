@@ -4,7 +4,7 @@ RUN  apt-get update \
     && apt-get install wget -y \
     && apt-get install zip -y
 
-# Preload ES stanza resources.
+# Descargar el diccionario en español de Stanza
 RUN wget https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.2.2.json -P /root/stanza_resources
 RUN wget http://nlp.stanford.edu/software/stanza/1.2.2/es/default.zip -P /root/stanza_resources/es
 RUN unzip /root/stanza_resources/es/default.zip -d /root/stanza_resources/es/

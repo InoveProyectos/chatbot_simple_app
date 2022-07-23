@@ -115,14 +115,21 @@ def get_response(tag, intents_json):
 # Preprocesamiento de texto (datos de entrada)
 #
 # ---------------------------------------------------------------
-@app.route('/predict',methods=['POST'])
+@app.route('/v1/models/chatbot:predict',methods=['POST'])
 def predict():
     try:
         if request.method == 'POST':
             # Leer el mensaje a responder (la pregunta)
-            message = request.form.get('instances')
-            if message is None:
+            instances_form = request.form.get('instances')
+            if instances_form is None and request.json is None:
                 return Response(status=400)
+
+            message = ""
+            if instances_form is not None:
+                message = instances_form
+
+            if request.json is not None:
+                message = request.json['instances'][0][0]
 
             # Realizar la predicción del modelo
             intents = pred_class(message, words, classes)
@@ -132,9 +139,9 @@ def predict():
                 # Solo tomar como válida la primera mejor respuesta
                 intent = intents[0]
                 result = get_response(intent["tag"], dataset)
-                json_data = {"predictions": {"label": intent["tag"], "score": float(intent["score"]), "message": result}}
+                json_data = {"predictions": [result]}
             else:
-                json_data = {"predictions": {"label": -1, "score": 0, "message": "Perdón, no pude entenderte"}}
+                json_data = {"predictions": ["Perdón, no pude entenderte"]}
             
             return jsonify(json_data)
         
@@ -144,4 +151,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=8501, debug=True)
